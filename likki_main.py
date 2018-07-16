@@ -4,7 +4,10 @@ import asyncio
 import os
 from discord.ext import commands
 
-bot = commands.Bot(command_prefix="~", description="", max_messages=10000)
+bot = commands.Bot(command_prefix="~",
+                   description="LBF's pet bot, programmed by @Lion_Kor / Lion#3620",
+                   max_messages=10000,
+                   pm_help=True)
 
 key = os.environ["DTOKEN"]
 
@@ -55,8 +58,19 @@ greetings = {
 
 print(key)
 
-@bot.command()
+
+@bot.event
+async def on_command_error(ctx, error):
+    await ctx.send(str(error) + " - Use `~help` " + ctx.author.mention, delete_after=30)
+    await log(ctx.guild, "[Command Error] " + str(error))
+
+
+@bot.command(
+    brief="tells you whats big",
+    description="responds with an unfunny message with a random persons name"
+)
 async def whatsbig(ctx):
+    """sends a reply with a random users name"""
     member = random.choice(ctx.guild.members)
     nick = member.nick
     if nick is None:
@@ -87,6 +101,7 @@ async def on_ready():
 @bot.event
 async def on_member_join(member):
     g = member.guild
+    s = "[Joined] " + str(member)
     await (await get_channel(g, ch_talk)).send("Welcome, {0}! Introduce yourself with a name in "
                                                        "{1} and read the Code of Conduct in {2}. "
                                                        "You will be assigned a role by an admin once you "
@@ -94,7 +109,8 @@ async def on_member_join(member):
         member.mention,
         (await get_channel(g, ch_talk)).mention,
         (await get_channel(g, ch_serverguide)).mention), delete_after=180)
-    await log(member.guild, "[Joined] " + str(member))
+    await dm_owner(s)
+    await log(member.guild, s)
 
 
 async def log(guild: discord.Guild, message):
@@ -136,25 +152,13 @@ async def on_message_delete(msg):
         "created = " + str(msg.created_at)
     )
 
-
-# @bot.event
-# async def on_raw_message_delete(payload):
-#     guild = bot.get_guild(payload.guild_id)
-#     ch = guild.get_channel(payload.channel_id)
-#
-#     await log(
-#         guild,
-#         "DELETED: \n" +
-#         "channel: " + str(ch) + "\n" +
-#         "message: " +
-#     )
-
-
 @bot.event
 async def on_member_remove(member):
-    await log(member.guild, "[Left] " + str(member))
+    s = "[Left] " + str(member)
+    await dm_owner(s)
+    await log(member.guild, s)
 
-lna = bot
+last_nice = bot.user
 
 @bot.event
 async def on_message(message):
@@ -178,8 +182,7 @@ async def on_message(message):
                     )
                     break
             await bot.process_commands(message)
-            return #important
-
+            return
 
         print(message.author.name, "@", message.channel, ":", c)
 
@@ -194,16 +197,13 @@ async def on_message(message):
                     nick = message.author.name
                 await message.channel.send(r + ", " + nick)
 
-
-
         # Nice.
-
+        global last_nice
         if message.channel.name == "nice":
-            if message.content != "Nice." or message.author == lna:
+            if message.content != "Nice." or message.author == last_nice:
                 await message.delete()
-                return
-            elif message.content == "Nice.":
-                lna = message.author
+            else:
+                last_nice = message.author
 
         # CUM
 
@@ -215,9 +215,6 @@ async def on_message(message):
                     if e.name == "cum":
                         await message.channel.send(str(e))
                         break
-
-        # INAPPROPIATE
-
 
         # FEET
         if c.lower().count("feet") >= 1\
@@ -262,13 +259,23 @@ async def make_hugs(message, word: str):
             await message.delete()
 
 
-@bot.command()
+@bot.command(brief="gives something, rp style",
+             description="gives something, rp style\n"
+                         "name: any name, nickname or mention\n"
+                         "item: any text describing or naming "
+                         "the item to give")
 async def give(ctx, name: str, *, item: str):
     member = get_member_by_name(ctx.guild, name)
     await ctx.send(ctx.author.mention + " gives " + item + " to " + member.mention)
 
 
-@bot.command()
+@bot.command(
+    brief="automation of the default procedure for new members",
+    description="automates the nicknaming and role giving for new members\n"
+                "Trusted and above only\n"
+                "user: any name, nickname or mention of the user to be promoted\n"
+                "nick: new nickname for the user"
+)
 async def pmt(ctx, user: str, nick: str):
     t_role = None
     f_role = None
@@ -286,7 +293,26 @@ async def pmt(ctx, user: str, nick: str):
             pass
 
 
-@bot.command()
+async def dm_owner(message: str):
+    for g in bot.guilds:
+        mo = g.get_member(owner)
+        if mo is not None:
+            dm = (await mo.create_dm())
+            embed = discord.Embed(title=message)
+            await dm.send(
+                embed=embed
+            )
+            break
+
+
+@bot.command(
+    brief="sends a custom dm to a user",
+    description="sends a custom dm to a user\n"
+                "Trusted and above only\n"
+                "user: any name, nickname or mention\n"
+                "message: the message to be dm-ed to the user\n"
+                "NOTE: Only Lion#3620 can see responses to dms"
+)
 async def dmsay(ctx, user: str, *, message: str):
     role = None
     for r in ctx.guild.roles:
@@ -314,24 +340,35 @@ async def dmsay(ctx, user: str, *, message: str):
     await ctx.message.delete()
 
 
-@bot.command()
-async def mastersay(ctx, mention: str, channel: str, *, message: str):
+@bot.command(
+    brief="sends a message in a channel and mentions a user",
+    description="sends a message in a channel and mentions a user\n"
+                "Trusted and above only\n"
+                "user: any name, nickname or mention of the user that is to be mentioned in the message\n"
+                "channel: the channel name that the message should be sent in (example: nsfw-talk)\n"
+                "message: the message to be sent"
+)
+async def mastersay(ctx, user: str, channel: str, *, message: str):
     role = None
     for r in ctx.guild.roles:
         if r.name == "Trusted":
             role = r
     if role in ctx.author.roles:
         try:
-            await (await get_channel(ctx.guild, channel)).send(message + " " + get_member_by_name(ctx.guild, mention).mention)
+            await (await get_channel(ctx.guild, channel)).send(message + " " + get_member_by_name(ctx.guild, user).mention)
         except Exception:
             await log(ctx.guild, "[Failed Command] mastersay")
             pass
     await ctx.message.delete()
 
 
-@bot.command()
-async def spamwarn(ctx, name: str):
-    member = get_member_by_name(ctx.guild, name)
+@bot.command(
+    brief="warns not to spam",
+    description="sends an image of spam and says that its disgusting\n"
+                "user: any name, nickname or mention"
+)
+async def spamwarn(ctx, user: str):
+    member = get_member_by_name(ctx.guild, user)
     if member is None:
         return
     embed = discord.Embed(title="no spam, please",
@@ -358,9 +395,13 @@ def get_member_by_name(guild: discord.Guild, name: str):
     return member
 
 
-@bot.command()
-async def info(ctx, name: str):
-    member = get_member_by_name(ctx.guild, name)
+@bot.command(
+    brief="displays basic information about a member",
+    description="displays information about a member in the server\n"
+                "user: any name, nickname or mention"
+)
+async def info(ctx, user: str):
+    member = get_member_by_name(ctx.guild, user)
     roles = ""
     rs = member.roles
     if len(rs) == 0:
@@ -383,9 +424,13 @@ async def info(ctx, name: str):
     await ctx.send(embed=embed)
 
 
-@bot.command()
-async def pfp(ctx, name: str):
-    member = get_member_by_name(ctx.guild, name)
+@bot.command(
+    brief="posts the profile picture of a member",
+    description="posts the profile picture of a member as well as the url ot it\n"
+                "user: any name, nickname or mention"
+)
+async def pfp(ctx, user: str):
+    member = get_member_by_name(ctx.guild, user)
     try:
         embed = discord.Embed(title="Profile Picture", url=member.avatar_url)
         embed = embed.set_thumbnail(url=member.avatar_url)
@@ -393,7 +438,14 @@ async def pfp(ctx, name: str):
     except AttributeError:
         await log(ctx.guild, "[Failed Command] " + str(ctx.author) + ": " + str(ctx.message.content))
 
-@bot.command()
+@bot.command(
+    brief="deletes an amount of messages by a specific user from a channel",
+    description="deletes an amount of messages by a specific user from a channel\n"
+                "user: any name, nickname or mention\n"
+                "limit: maximum amount of messages to be removed\n"
+                "NOTE: please note that this will take effect in the channel the command has been"
+                "issued in"
+)
 async def cleanup(ctx, user: str, limit: int):
     role = None
     for r in ctx.guild.roles:
