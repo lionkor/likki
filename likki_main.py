@@ -248,7 +248,13 @@ async def make_hugs(message, word: str):
     sender = message.author.mention
     if member is not None:
         print(member)
-        if str(member) == str(bot.user):
+        if str(member) == str(message.author):
+            if word.lower() == "hugs ":
+                await message.channel.send("oh no, I'll hug you ♡")
+                await message.channel.send(bot.user.mention + " hugs " + sender)
+            else:
+                await message.channel.send("Don't, please :c")
+        elif str(member) == str(bot.user):
             if word.lower() == "hugs ":
                 await message.channel.send(sender + " ♡")
             else:
