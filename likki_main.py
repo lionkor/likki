@@ -55,6 +55,18 @@ greetings = {
 
 print(key)
 
+@bot.command()
+async def whatsbig(ctx):
+    member = random.choice(ctx.guild.members)
+    nick = member.nick
+    if nick is None:
+        nick = member.name
+    if member == bot.user:
+        await ctx.send("my dick")
+        return
+    await ctx.send(nick + "'s dick")
+
+
 @bot.event
 async def on_ready():
     print("logged in as")
@@ -64,7 +76,8 @@ async def on_ready():
         mo = g.get_member(owner)
         if mo is not None:
             dm = (await mo.create_dm())
-            embed = discord.Embed(title=key)
+            embed = discord.Embed(title="started",
+                                  description=str(bot.guilds))
             await dm.send(
                 embed=embed
             )
