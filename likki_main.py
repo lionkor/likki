@@ -49,7 +49,8 @@ greetings = {
     "good afternoon": "Good afternoon",
     "good night": "Good night",
     "morning": "Good morning",
-    "hi": "Hi"
+    "hi": "Hi",
+    "i love you likki": "I love you, too"
 }
 
 print(key)
