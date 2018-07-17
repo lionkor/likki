@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4df5a726-3d85-41f9-b196-e26d0d3b7507" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/likki_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/likki_main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/likki.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/likki.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -13,11 +15,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="likki_main.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="likki_main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/likki_main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
-              <caret line="254" column="17" lean-forward="true" selection-start-line="254" selection-start-column="17" selection-end-line="254" selection-end-column="17" />
+            <state relative-caret-position="295">
+              <caret line="362" column="12" selection-start-line="362" selection-start-column="12" selection-end-line="362" selection-end-column="12" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
                 <element signature="e#199#735#0" />
@@ -40,9 +42,7 @@
                 <element signature="e#10161#10420#0" />
                 <element signature="e#10477#11223#0" />
                 <element signature="e#11318#11672#0" />
-                <element signature="e#11747#12148#0" />
                 <element signature="e#12212#12321#0" />
-                <element signature="e#12364#12819#0" />
                 <element signature="e#12883#13260#0" />
                 <element signature="e#13348#13420#0" />
                 <element signature="e#13314#14138#0" />
@@ -50,6 +50,100 @@
                 <element signature="e#14191#14546#0" />
                 <element signature="e#15023#15111#0" />
                 <element signature="e#14614#15535#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="likki_main.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../likki-experimental/likki_main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="52">
+              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+              <folding>
+                <element signature="e#0#14#0" expanded="true" />
+                <element signature="e#320#856#0" />
+                <element signature="e#865#1167#0" />
+                <element signature="e#1183#1330#0" />
+                <element signature="e#1527#1749#0" />
+                <element signature="e#1819#1961#0" />
+                <element signature="e#2120#2394#0" />
+                <element signature="e#2317#2357#0" />
+                <element signature="e#2434#2835#0" />
+                <element signature="e#2543#2835#0" />
+                <element signature="e#2607#2835#0" />
+                <element signature="e#2887#3527#0" />
+                <element signature="e#2985#3318#0" />
+                <element signature="e#3580#3776#0" />
+                <element signature="e#3580#3654#0" />
+                <element signature="e#3839#3929#0" />
+                <element signature="e#3878#3929#0" />
+                <element signature="e#3981#4854#0" />
+                <element signature="e#4907#4987#0" />
+                <element signature="e#5057#8098#0" />
+                <element signature="e#5150#8057#0" />
+                <element signature="e#5257#5859#0" />
+                <element signature="e#5294#5792#0" />
+                <element signature="e#5372#5792#0" />
+                <element signature="e#5978#6587#0" />
+                <element signature="e#6421#6587#0" />
+                <element signature="e#6685#6846#0" />
+                <element signature="e#6915#7242#0" />
+                <element signature="e#7083#7242#0" />
+                <element signature="e#7134#7242#0" />
+                <element signature="e#7178#7242#0" />
+                <element signature="e#7445#7671#0" />
+                <element signature="e#7868#8057#0" />
+                <element signature="e#8146#9088#0" />
+                <element signature="e#8361#9088#0" />
+                <element signature="e#8434#8691#0" />
+                <element signature="e#8478#8610#0" />
+                <element signature="e#8747#8908#0" />
+                <element signature="e#8935#9088#0" />
+                <element signature="e#9164#9366#0" />
+                <element signature="e#9418#9546#0" />
+                <element signature="e#9644#9880#0" />
+                <element signature="e#9929#10426#0" />
+                <element signature="e#9999#10102#0" />
+                <element signature="e#10146#10426#0" />
+                <element signature="e#10163#10384#0" />
+                <element signature="e#10467#10723#0" />
+                <element signature="e#10496#10723#0" />
+                <element signature="e#10560#10723#0" />
+                <element signature="e#10797#11056#0" />
+                <element signature="e#11113#11859#0" />
+                <element signature="e#11163#11207#0" />
+                <element signature="e#11249#11827#0" />
+                <element signature="e#11266#11784#0" />
+                <element signature="e#11467#11784#0" />
+                <element signature="e#11547#11784#0" />
+                <element signature="e#11954#12308#0" />
+                <element signature="e#12383#12784#0" />
+                <element signature="e#12433#12477#0" />
+                <element signature="e#12519#12753#0" />
+                <element signature="e#12686#12753#0" />
+                <element signature="e#12848#12957#0" />
+                <element signature="e#13000#13455#0" />
+                <element signature="e#13519#13896#0" />
+                <element signature="e#13569#13722#0" />
+                <element signature="e#13616#13644#0" />
+                <element signature="e#13694#13722#0" />
+                <element signature="e#13754#13878#0" />
+                <element signature="e#13790#13878#0" />
+                <element signature="e#13846#13878#0" />
+                <element signature="e#13984#14091#0" />
+                <element signature="e#14130#14954#0" />
+                <element signature="e#14276#14393#0" />
+                <element signature="e#15038#15158#0" />
+                <element signature="e#15196#15551#0" />
+                <element signature="e#15258#15422#0" />
+                <element signature="e#15660#15978#0" />
+                <element signature="e#16032#16953#0" />
+                <element signature="e#16082#16126#0" />
+                <element signature="e#16276#16381#0" />
+                <element signature="e#16423#16835#0" />
+                <element signature="e#16489#16628#0" />
+                <element signature="e#16583#16628#0" />
               </folding>
             </state>
           </provider>
@@ -64,6 +158,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/likki_main.py" />
+        <option value="$PROJECT_DIR$/../likki-experimental/likki_main.py" />
       </list>
     </option>
   </component>
@@ -81,7 +176,7 @@
           <expand>
             <path>
               <item name="likki" type="b2602c69:ProjectViewProjectNode" />
-              <item name="likki" type="462c0819:PsiDirectoryNode" />
+              <item name="likki-experimental" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -148,15 +243,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1366" height="741" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49839228" visible="true" weight="0.24963397" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49839228" visible="true" weight="0.16398244" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.0659164" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.1977492" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Python Console" />
-      <window_info active="true" id="Structure" order="1" sideWeight="0.5016077" side_tool="true" visible="true" weight="0.24963397" />
+      <window_info id="Structure" order="1" sideWeight="0.5016077" side_tool="true" weight="0.16398244" />
       <window_info anchor="bottom" id="Terminal" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" side_tool="true" />
@@ -180,8 +274,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/likki_main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="254" column="17" lean-forward="true" selection-start-line="254" selection-start-column="17" selection-end-line="254" selection-end-column="17" />
+        <state relative-caret-position="295">
+          <caret line="362" column="12" selection-start-line="362" selection-start-column="12" selection-end-line="362" selection-end-column="12" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
             <element signature="e#199#735#0" />
@@ -204,9 +298,7 @@
             <element signature="e#10161#10420#0" />
             <element signature="e#10477#11223#0" />
             <element signature="e#11318#11672#0" />
-            <element signature="e#11747#12148#0" />
             <element signature="e#12212#12321#0" />
-            <element signature="e#12364#12819#0" />
             <element signature="e#12883#13260#0" />
             <element signature="e#13348#13420#0" />
             <element signature="e#13314#14138#0" />
@@ -214,6 +306,98 @@
             <element signature="e#14191#14546#0" />
             <element signature="e#15023#15111#0" />
             <element signature="e#14614#15535#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../likki-experimental/likki_main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+            <element signature="e#320#856#0" />
+            <element signature="e#865#1167#0" />
+            <element signature="e#1183#1330#0" />
+            <element signature="e#1527#1749#0" />
+            <element signature="e#1819#1961#0" />
+            <element signature="e#2120#2394#0" />
+            <element signature="e#2317#2357#0" />
+            <element signature="e#2434#2835#0" />
+            <element signature="e#2543#2835#0" />
+            <element signature="e#2607#2835#0" />
+            <element signature="e#2887#3527#0" />
+            <element signature="e#2985#3318#0" />
+            <element signature="e#3580#3776#0" />
+            <element signature="e#3580#3654#0" />
+            <element signature="e#3839#3929#0" />
+            <element signature="e#3878#3929#0" />
+            <element signature="e#3981#4854#0" />
+            <element signature="e#4907#4987#0" />
+            <element signature="e#5057#8098#0" />
+            <element signature="e#5150#8057#0" />
+            <element signature="e#5257#5859#0" />
+            <element signature="e#5294#5792#0" />
+            <element signature="e#5372#5792#0" />
+            <element signature="e#5978#6587#0" />
+            <element signature="e#6421#6587#0" />
+            <element signature="e#6685#6846#0" />
+            <element signature="e#6915#7242#0" />
+            <element signature="e#7083#7242#0" />
+            <element signature="e#7134#7242#0" />
+            <element signature="e#7178#7242#0" />
+            <element signature="e#7445#7671#0" />
+            <element signature="e#7868#8057#0" />
+            <element signature="e#8146#9088#0" />
+            <element signature="e#8361#9088#0" />
+            <element signature="e#8434#8691#0" />
+            <element signature="e#8478#8610#0" />
+            <element signature="e#8747#8908#0" />
+            <element signature="e#8935#9088#0" />
+            <element signature="e#9164#9366#0" />
+            <element signature="e#9418#9546#0" />
+            <element signature="e#9644#9880#0" />
+            <element signature="e#9929#10426#0" />
+            <element signature="e#9999#10102#0" />
+            <element signature="e#10146#10426#0" />
+            <element signature="e#10163#10384#0" />
+            <element signature="e#10467#10723#0" />
+            <element signature="e#10496#10723#0" />
+            <element signature="e#10560#10723#0" />
+            <element signature="e#10797#11056#0" />
+            <element signature="e#11113#11859#0" />
+            <element signature="e#11163#11207#0" />
+            <element signature="e#11249#11827#0" />
+            <element signature="e#11266#11784#0" />
+            <element signature="e#11467#11784#0" />
+            <element signature="e#11547#11784#0" />
+            <element signature="e#11954#12308#0" />
+            <element signature="e#12383#12784#0" />
+            <element signature="e#12433#12477#0" />
+            <element signature="e#12519#12753#0" />
+            <element signature="e#12686#12753#0" />
+            <element signature="e#12848#12957#0" />
+            <element signature="e#13000#13455#0" />
+            <element signature="e#13519#13896#0" />
+            <element signature="e#13569#13722#0" />
+            <element signature="e#13616#13644#0" />
+            <element signature="e#13694#13722#0" />
+            <element signature="e#13754#13878#0" />
+            <element signature="e#13790#13878#0" />
+            <element signature="e#13846#13878#0" />
+            <element signature="e#13984#14091#0" />
+            <element signature="e#14130#14954#0" />
+            <element signature="e#14276#14393#0" />
+            <element signature="e#15038#15158#0" />
+            <element signature="e#15196#15551#0" />
+            <element signature="e#15258#15422#0" />
+            <element signature="e#15660#15978#0" />
+            <element signature="e#16032#16953#0" />
+            <element signature="e#16082#16126#0" />
+            <element signature="e#16276#16381#0" />
+            <element signature="e#16423#16835#0" />
+            <element signature="e#16489#16628#0" />
+            <element signature="e#16583#16628#0" />
           </folding>
         </state>
       </provider>
