@@ -27,6 +27,8 @@ class LGuild:
             self.users[member] = 1
         self.save_db()
 
+    def get(self, member: str):
+        return users[member]
 
     def __init__(self, name: str, members: list):
         self.name = name

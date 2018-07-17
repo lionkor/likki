@@ -463,6 +463,7 @@ async def info(ctx, user: str):
 	embed.add_field(name="Roles: ", value=roles, inline=True)
 	embed.add_field(name="Top Role: ", value=str(member.top_role), inline=True)
 	embed.add_field(name="Joined: ", value=str(member.joined_at), inline=True)
+	embed.add_field(name="Messages since bot recording: ", value=str(LG[str(ctx.guild)].get(str(member)))
 	await ctx.send(embed=embed)
 
 
