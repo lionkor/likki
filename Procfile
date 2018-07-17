@@ -1,1 +1,1 @@
-worker: python3 likki_main.py
+worker: python3 likki-main.py
