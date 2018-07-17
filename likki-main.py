@@ -46,6 +46,7 @@ ch_talk = "talk"
 ch_welcomemessages = "welcome-messages"
 ch_serverguide = "server-guide"
 ch_logs = "logs"
+ch_coc = "code-of-conduct"
 lbf = 449671941079564288
 tst = 467464876055461900
 owner = 346853432365416462
@@ -118,7 +119,7 @@ async def on_member_join(member):
 													   "introduce yourself!".format(
 		member.mention,
 		(await get_channel(g, ch_talk)).mention,
-		(await get_channel(g, ch_serverguide)).mention), delete_after=180)
+		(await get_channel(g, ch_coc)).mention), delete_after=180)
 	await dm_owner(s)
 	await log(member.guild, s)
 
