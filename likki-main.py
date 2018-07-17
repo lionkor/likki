@@ -112,7 +112,7 @@ async def on_ready():
 async def on_member_join(member):
 	g = member.guild
 	s = "[Joined] " + str(member)
-	await (await get_channel(g, ch_talk)).send("Welcome, {0}! Introduce yourself with a name in "
+	await (await get_channel(g, ch_welcomemessages)).send("Welcome, {0}! Introduce yourself with a name in "
 													   "{1} and read the Code of Conduct in {2}. "
 													   "You will be assigned a role by an admin once you "
 													   "introduce yourself!".format(
